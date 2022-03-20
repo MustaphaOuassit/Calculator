@@ -29,11 +29,13 @@
     border-top-left-radius: 18px;
     height: 80px;
     align-items: center;
+    overflow: auto;
+    overflow-y: hidden;
 }
 
 .nb-result{
     color: #fff;
-    margin: 5px;
+    margin: 2px;
     font-size: 35px;
 }
 

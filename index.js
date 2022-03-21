@@ -6,6 +6,7 @@ let remove = document.getElementById("remove");
 let operation = false;
 let value = 0;
 let typeOperation = false;
+let lastOperator = false;
 let total = document.getElementById("total");
 
 for(let i = 0; i < number.length; i++)
@@ -17,6 +18,7 @@ for(let i = 0; i < number.length; i++)
             value = result.innerHTML;
             result.innerHTML = "";
             operation = false;
+            lastOperator = typeOperation;
         }
         result.innerHTML += this.innerHTML;
     });
@@ -32,6 +34,10 @@ String.prototype.replaceAt = function(index, replacement) {
 
 reset.addEventListener("click",function(){
     result.innerHTML = "0";
+    value = 0;
+    operation = false;
+    typeOperation = false;
+    lastOperator = false;
 });
 
 remove.addEventListener("click",function(){
@@ -57,13 +63,13 @@ for(let i = 0; i < buttonOperation.length; i++)
         typeOperation = buttonOperation[i].innerHTML;
         if(value)
         {
-            if(typeOperation === "+")
+            if(lastOperator === "+")
                 result.innerHTML = Number(value) + Number(result.innerHTML);
-            if(typeOperation === "-")
+            if(lastOperator === "-")
                 result.innerHTML = Number(value) - Number(result.innerHTML);
-            if(typeOperation === "x")
+            if(lastOperator === "x")
                 result.innerHTML = Number(value) * Number(result.innerHTML);
-            if(typeOperation === "÷")
+            if(lastOperator === "÷")
                 result.innerHTML = Number(value) / Number(result.innerHTML);
             value = 0;
         }

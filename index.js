@@ -96,4 +96,4 @@ total.addEventListener("click", function(){
             result.innerHTML = Number(value) / Number(result.innerHTML);
         value = 0;
     }
-})
+});

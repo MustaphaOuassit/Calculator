@@ -50,6 +50,10 @@ remove.addEventListener("click",function(){
         }
         else
             result.innerHTML = "0";
+            value = 0;
+            operation = false;
+            typeOperation = false;
+            lastOperator = false;
     }
 });
 

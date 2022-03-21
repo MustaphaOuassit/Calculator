@@ -45,8 +45,19 @@ remove.addEventListener("click",function(){
     {
         if(result.innerHTML.length > 1)
         {
-            result.innerHTML =  result.innerHTML
-            .replaceAt(result.innerHTML.length - 1,'');
+            if(result.innerHTML.length == 2 && result.innerHTML[0] == '-')
+            {
+                result.innerHTML = "0";
+                value = 0;
+                operation = false;
+                typeOperation = false;
+                lastOperator = false;
+            }
+            else
+            {
+                result.innerHTML =  result.innerHTML
+                .replaceAt(result.innerHTML.length - 1,'');
+            }
         }
         else
         {

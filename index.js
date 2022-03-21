@@ -49,11 +49,13 @@ remove.addEventListener("click",function(){
             .replaceAt(result.innerHTML.length - 1,'');
         }
         else
+        {
             result.innerHTML = "0";
             value = 0;
             operation = false;
             typeOperation = false;
             lastOperator = false;
+        }
     }
 });
 
